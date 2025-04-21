@@ -28,6 +28,9 @@
                         <a class="nav-link" href="#">À propos</a>
                     </li>
                 </ul>
+                <div class="d-flex ms-auto">
+                    <a class="btn btn-primary" th:href="@{/reservation}">Réservation</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -50,6 +53,7 @@
                         <th>Email</th>
                         <th>Domaine</th>
                         <th>Username</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -62,6 +66,8 @@
                         <td>
                             <a onclick="return confirm('Êtes-vous sûr ?')" class="btn btn-danger"
                                th:href="@{/delete(id=${e.id}, keyword=${keyword}, page=${pageCurrent})}">Supprimer</a>
+                            <a class="btn btn-success ms-2"
+                               th:href="@{/editEntreprise(id=${e.id})}">Modifier</a>
                         </td>
                     </tr>
                     </tbody>

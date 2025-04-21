@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter Entreprise</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="col-md-6 offset-3">
+        <form method="post" th:action="@{/saveEntreprise}">
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
+                <input id="nom" class="form-control" type="text" name="nom" th:value="${entreprise.nom}" required>
+                <span class="text-danger" th:errors="${entreprise.nom}"></span>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" class="form-control" type="email" name="email" th:value="${entreprise.email}" required>
+                <span class="text-danger" th:errors="${entreprise.email}"></span>
+            </div>
+            <div class="mb-3">
+                <label for="domaine" class="form-label">Domaine</label>
+                <input id="domaine" class="form-control" type="text" name="domaine" th:value="${entreprise.domaine}" required>
+                <span class="text-danger" th:errors="${entreprise.domaine}"></span>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Nom d'utilisateur</label>
+                <input id="username" class="form-control" type="text" name="username" th:value="${entreprise.username}" required>
+                <span class="text-danger" th:errors="${entreprise.username}"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
